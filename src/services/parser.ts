@@ -74,7 +74,9 @@ function parseDocuments(text: string, ext: string): unknown[] {
   }
 
   const docs: unknown[] = [];
-  loadAll(text, (doc) => docs.push(doc));
+  loadAll(text, (doc: unknown) => {
+    docs.push(doc);
+  });
   return docs;
 }
 
